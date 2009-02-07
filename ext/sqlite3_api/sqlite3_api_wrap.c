@@ -1513,7 +1513,7 @@ _wrap_sqlite3_open(int argc, VALUE *argv, VALUE self) {
     if ((argc < 1) || (argc > 1))
     rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc);
     {
-        arg1 = STR2CSTR(argv[0]);
+        arg1 = StringValueCStr(argv[0]);
         arg2 = (sqlite3**)malloc( sizeof( sqlite3* ) );
     }
     result = (int)sqlite3_open((char const *)arg1,arg2);
