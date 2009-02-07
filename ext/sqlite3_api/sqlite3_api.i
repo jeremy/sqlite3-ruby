@@ -120,7 +120,7 @@ struct CallbackData {
 }
 
 %typemap(in) (const char *filename, sqlite3**) {
-  $1 = STR2CSTR($input);
+  $1 = StringValueCStr($input);
   $2 = (sqlite3**)malloc( sizeof( sqlite3* ) );
 }
 
